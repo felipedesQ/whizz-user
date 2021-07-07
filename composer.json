@@ -1,0 +1,109 @@
+{
+    "type": "project",
+    "license": "proprietary",
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "require": {
+        "php": "^7.3.0",
+        "ext-ctype": "*",
+        "ext-iconv": "*",
+        "ext-json": "*",
+  "beberlei/doctrineextensions": "^1.3",
+        "doctrine/annotations": "^1.6",
+        "doctrine/common": "^2.11",
+        "doctrine/dbal": "^2.9",
+        "doctrine/migrations": "2.2.1",
+        "guzzlehttp/guzzle": "~6.0",
+        "jms/serializer-bundle": "^3.4",
+        "felipedesq/shared-object": "dev-master",
+        "sensio/framework-extra-bundle": "^5.1",
+        "symfony/asset": "*",
+        "symfony/console": "*",
+        "symfony/expression-language": "*",
+        "symfony/flex": "^1.1",
+        "symfony/form": "*",
+        "symfony/framework-bundle": "*",
+        "symfony/monolog-bundle": "^3.1",
+        "symfony/orm-pack": "*",
+        "symfony/process": "*",
+        "symfony/security-bundle": "*",
+        "symfony/serializer-pack": "*",
+        "symfony/swiftmailer-bundle": "^3.1",
+        "symfony/validator": "*",
+        "symfony/web-link": "*",
+        "symfony/yaml": "*",
+        "twig/extensions": "*"
+    },
+    "require-dev": {
+        "behat/behat": "dev-master",
+        "behat/mink": "dev-master",
+        "behat/mink-browserkit-driver": "^1.3",
+        "behat/mink-extension": "^2.3",
+        "behat/mink-goutte-driver": "^1.2",
+        "behat/symfony2-extension": "^2.1",
+        "behatch/contexts": "^3.2",
+        "fabpot/goutte": "^3.2",
+        "friends-of-behat/symfony-extension": "^1.3",
+        "symfony/debug-pack": "*",
+        "symfony/dotenv": "*",
+        "symfony/maker-bundle": "^1.0",
+        "symfony/profiler-pack": "*",
+        "symfony/test-pack": "*",
+        "phpunit/phpunit": "^5.6",
+        "phpspec/phpspec": "^4.0",
+        "symfony/phpunit-bridge": "^4.1",
+        "symfony/web-server-bundle": "4.1.*"
+    },
+    "config": {
+        "preferred-install": {
+            "*": "dist"
+        },
+        "sort-packages": true,
+        "bin-dir": "bin"
+    },
+    "autoload": {
+        "psr-4": {
+            "Whizz\\User\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Whizz\\User\\Test\\Stories\\ModuleApi\\": "tests/stories/",
+            "Whizz\\User\\Test\\Units\\ModuleApi\\": "tests/units/",
+            "Whizz\\User\\Spec\\": "tests/specifications/"
+        }
+    },
+    "replace": {
+        "symfony/polyfill-ctype": "*",
+        "symfony/polyfill-iconv": "*",
+        "symfony/polyfill-php71": "*",
+        "symfony/polyfill-php70": "*",
+        "symfony/polyfill-php56": "*"
+    },
+    "scripts": {
+        "auto-scripts": {
+            "cache:clear": "symfony-cmd",
+            "assets:install %PUBLIC_DIR%": "symfony-cmd"
+        },
+        "post-install-cmd": [
+            "@auto-scripts"
+        ],
+        "post-update-cmd": [
+            "@auto-scripts"
+        ]
+    },
+    "conflict": {
+        "symfony/symfony": "*"
+    },
+    "extra": {
+        "symfony": {
+            "allow-contrib": false
+        }
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url":  "git@github.com:felipedesQ/whizz-shared-object.git"
+        }
+    ]
+}
